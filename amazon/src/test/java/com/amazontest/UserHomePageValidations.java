@@ -2,25 +2,30 @@ package com.amazontest;
 
 import com.amazon.pages.HomePage;
 import com.amazon.pages.LoginPage;
+import com.amazon.pages.UserHomePage;
 import com.peoplentech.bootcampproject.TestBase;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-public class LoginPageValidations extends TestBase {
+public class UserHomePageValidations extends TestBase {
 
-    @Test (enabled = false)
+    @Test(enabled = false)
     public void validateTheLoginPage(){
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         homePage.hoverOverHelloSignInOnHomePage();
         homePage.clickOnSignInButton();
         LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
-        loginPage.validateAmazonLoginPageLogo();
+        loginPage.userEntersValidLoginCredentialsAndLogsIn();
+        UserHomePage userHomePage = PageFactory.initElements(driver, UserHomePage.class);
+        userHomePage.validateWelcomeMessage();
     }
 
     @Test(enabled = false)
-    public void validateUserCanLogInWithValidCredentials() {
+    public void validateUserCanSearchForAnItem() {
         validateTheLoginPage();
-        LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
-        loginPage.userEntersValidLoginCredentialsAndLogsIn();
+        UserHomePage userHomePage = PageFactory.initElements(driver, UserHomePage.class);
+        userHomePage.userSearchesForItem();
     }
+
+
 }

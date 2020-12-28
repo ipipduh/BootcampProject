@@ -20,10 +20,10 @@
         <classes>
             <class name="com.amazontest.HomePageValidations"/>
             <class name="com.amazontest.LoginPageValidations"/>
-            <class name="com.amazontest.CheckOutPageValidations"/>
             <class name="com.amazontest.SignOutPageValidations"/>
             <class name="com.amazontest.ProductPageValidations"/>
-            <class name="com.amazontest.ShoppingCartValidations"/>
+            <class name="com.amazontest.UserHomePageValidations"/>
+            <class name="com.amazontest.AffiliatePageValidations"/>
         </classes>
     </test>
 </suite>
